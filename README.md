@@ -6,6 +6,7 @@ Plant Parent is a SwiftUI iOS app for keeping a simple record of your plants and
 
 - Add, edit, and delete plants
 - Record common and scientific plant species
+- Record purchase prices in the device's local currency
 - Save an optional plant photo and notes
 - Capture progress photos with metadata-derived dates and optional notes
 - Track how many days you have owned each plant

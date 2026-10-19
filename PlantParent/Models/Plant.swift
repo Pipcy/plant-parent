@@ -8,6 +8,7 @@ final class Plant {
     var scientificName: String = ""
     var speciesReferenceID: Int?
     var acquiredOn: Date
+    var purchasePrice: Double?
     var plantNotes: String
     var careInstructions: String = ""
     @Attribute(.externalStorage) var photoData: Data?
@@ -25,6 +26,7 @@ final class Plant {
         scientificName: String = "",
         speciesReferenceID: Int? = nil,
         acquiredOn: Date = .now,
+        purchasePrice: Double? = nil,
         notes: String = "",
         careInstructions: String = "",
         photoData: Data? = nil,
@@ -35,6 +37,7 @@ final class Plant {
         self.scientificName = scientificName
         self.speciesReferenceID = speciesReferenceID
         self.acquiredOn = acquiredOn
+        self.purchasePrice = purchasePrice
         self.plantNotes = notes
         self.careInstructions = careInstructions
         self.photoData = photoData

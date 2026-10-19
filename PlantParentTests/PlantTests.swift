@@ -33,6 +33,12 @@ final class PlantTests: XCTestCase {
         XCTAssertEqual(plant.daysOwned(asOf: earlierDate, calendar: calendar), 0)
     }
 
+    func testPlantStoresOptionalPurchasePrice() {
+        let plant = Plant(name: "Fern", purchasePrice: 24.99)
+
+        XCTAssertEqual(plant.purchasePrice, 24.99)
+    }
+
     func testLatestEventReturnsNewestMatchingType() throws {
         let plant = Plant(name: "Fern")
         let olderWatering = CareEvent(type: .water, date: Date(timeIntervalSince1970: 100))

@@ -120,6 +120,21 @@ struct PlantDetailView: View {
                 }
             }
 
+            Section("Plant Details") {
+                LabeledContent("Date Acquired") {
+                    Text(plant.acquiredOn, format: .dateTime.month(.abbreviated).day().year())
+                }
+
+                if let purchasePrice = plant.purchasePrice {
+                    LabeledContent("Purchase Price") {
+                        Text(
+                            purchasePrice,
+                            format: .currency(code: currencyCode)
+                        )
+                    }
+                }
+            }
+
             Section {
                 Button("Delete Plant", role: .destructive) {
                     isConfirmingDelete = true
@@ -171,6 +186,10 @@ struct PlantDetailView: View {
     private var ownedText: String {
         let days = plant.daysOwned
         return "Owned for \(days) \(days == 1 ? "day" : "days")"
+    }
+
+    private var currencyCode: String {
+        Locale.current.currency?.identifier ?? "USD"
     }
 
     private func careButton(for type: CareEventType, color: Color) -> some View {
